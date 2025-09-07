@@ -12,17 +12,36 @@ struct ContentView: View {
     @State var jokeText = "Click Button"
     
     var body: some View {
+        
         VStack {
+            Text("Random Joke!")
+                .font(.largeTitle)
+                .bold()
+                .padding()
             
             Spacer()
             Text(jokeText)
+                .padding()
+                .frame(maxWidth: 400)
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .foregroundColor(.orange)
+                        .opacity(0.4)
+                )
             
             Spacer()
             Button {
                 getRandomJoke()
             } label: {
                 Text("Get Random Joke")
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(.blue)
+                            .opacity(0.4)
+                    )
             }
+            .foregroundColor(.black)
 
         }
         .padding()
